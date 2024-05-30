@@ -12,6 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Document } from "@langchain/core/documents";
 
 function extractFileName(path: string) {
   // Extract the file name with the extension
@@ -100,6 +101,8 @@ export default function Home() {
             {messages.map((message, index) => {
               let icon;
               let className;
+              const sources = sourcesForMessages[index] || undefined;
+
               if (message.role === "assistant") {
                 icon = (
                   <Image
@@ -138,48 +141,29 @@ export default function Home() {
                       <ReactMarkdown>{message.content}</ReactMarkdown>
                     </div>
                   </div>
-                  {/* {message.type === 'apiMessage' && message.imageUrl && (
-                      <div key={`chatMessageImage-${index}`} className="mx-auto my-2">
-                        <img
-                          src={message.imageUrl}
-                          alt="Image related to the query"
-                        />
-                        <p className="text-center">
-                          Source: <a href={message.imageSource} target="_blank" rel="noopener noreferrer">{message.imageSource}</a>
-                        </p>
-                      </div>
-                    )}
-                  {message.sourceDocs && (
-                        <div
-                          className="p-5"
-                          key={`sourceDocsAccordion-${index}`}
-                        >
-                          <Accordion
-                            type="single"
-                            collapsible
-                            className="flex-col"
-                          >
-                            {message.sourceDocs.map((doc, index) => (
-                              <div key={`messageSourceDocs-${index}`}>
-                                <AccordionItem value={`item-${index}`}>
-                                  <AccordionTrigger>
-                                    <h3>Source {index + 1}</h3>
-                                  </AccordionTrigger>
-                                  <AccordionContent>
-                                    <ReactMarkdown linkTarget="_blank">
-                                      {doc.pageContent}
-                                    </ReactMarkdown>
-                                    <p className="mt-2">
-                                      <b>Source:</b>{' '}
-                                      {extractFileName(doc.metadata.source)}
-                                    </p>
-                                  </AccordionContent>
-                                </AccordionItem>
-                              </div>
-                            ))}
-                          </Accordion>
-                        </div>
-                      )} */}
+
+                  {sources && (
+                    <div className="p-5" key={`sourceDocsAccordion-${index}`}>
+                      <Accordion type="single" collapsible className="flex-col">
+                        {sources.map((doc: Document, index: number) => (
+                          <div key={`messageSourceDocs-${index}`}>
+                            <AccordionItem value={`item-${index}`}>
+                              <AccordionTrigger>
+                                <h3>Source {index + 1}</h3>
+                              </AccordionTrigger>
+                              <AccordionContent>
+                                <ReactMarkdown>{doc.pageContent}</ReactMarkdown>
+                                <p className="mt-2">
+                                  <b>Source: </b>
+                                  {extractFileName(doc.metadata.source)}
+                                </p>
+                              </AccordionContent>
+                            </AccordionItem>
+                          </div>
+                        ))}
+                      </Accordion>
+                    </div>
+                  )}
                 </>
               );
             })}

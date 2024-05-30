@@ -34,7 +34,7 @@ export async function POST(req: Request) {
     const currentMessage = messages[messages.length - 1].content;
 
     const chatModel = new ChatOpenAI({
-      modelName: "gpt-4",
+      modelName: "gpt-3.5-turbo",
       streaming: true,
       cache: true,
     });
@@ -52,6 +52,7 @@ export async function POST(req: Request) {
     });
 
     const retriever = (await vectorstore).asRetriever({
+      k: 10,
       callbacks: [
         {
           handleRetrieverEnd(documents) {
@@ -73,7 +74,7 @@ export async function POST(req: Request) {
       JSON.stringify(
         documents.map((doc) => {
           return {
-            pageContent: doc.pageContent.slice(0, 50) + "...",
+            pageContent: doc.pageContent,
             metadata: doc.metadata,
           };
         })
