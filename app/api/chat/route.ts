@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { ChatOpenAI } from "@langchain/openai";
 import { HumanMessage, AIMessage, ChatMessage } from "@langchain/core/messages";
 import type { Message as VercelChatMessage } from "ai";
@@ -36,7 +38,6 @@ export async function POST(req: Request) {
     const chatModel = new ChatOpenAI({
       modelName: "gpt-4",
       streaming: true,
-      maxTokens: 4000,
     });
 
     const embeddings = loadEmbeddingsModel();
