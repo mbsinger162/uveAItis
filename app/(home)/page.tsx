@@ -187,7 +187,7 @@ export default function Home() {
                 placeholder={
                   isLoading
                     ? "Waiting for response..."
-                    : "How do I treat a corneal abrasion?"
+                    : "What is the differential diagnosis for a red painful eye?"
                 }
                 className={styles.textarea}
               />
