@@ -1,5 +1,3 @@
-export const dynamic = "force-dynamic";
-
 import { ChatOpenAI } from "@langchain/openai";
 import { HumanMessage, AIMessage, ChatMessage } from "@langchain/core/messages";
 import type { Message as VercelChatMessage } from "ai";
