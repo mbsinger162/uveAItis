@@ -18,7 +18,7 @@ const formatVercelMessages = (message: VercelChatMessage) => {
   }
 };
 
-export const dynamic = "force-dynamic";
+export const runtime = "edge";
 
 export async function POST(req: Request) {
   try {
