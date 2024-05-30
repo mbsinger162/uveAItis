@@ -13,7 +13,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Document } from "@langchain/core/documents";
-import { unstable_noStore as noStore } from "next/cache";
 
 function extractFileName(path: string) {
   const fileNameWithExtension = path.split(/[/\\]/).pop() || "";
@@ -26,8 +25,6 @@ function extractFileName(path: string) {
 }
 
 export default function Home() {
-  noStore();
-
   const [sourcesForMessages, setSourcesForMessages] = useState<
     Record<string, any>
   >({});

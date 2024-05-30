@@ -5,8 +5,6 @@ import { loadEmbeddingsModel, loadVectorStore } from "@/utils/pinecone";
 import { createRAGChain } from "@/utils/ragChain";
 import { Document } from "@langchain/core/documents";
 
-export const dynamic = "force-dynamic";
-
 const formatVercelMessages = (message: VercelChatMessage) => {
   if (message.role === "user") {
     return new HumanMessage(message.content);
@@ -19,6 +17,8 @@ const formatVercelMessages = (message: VercelChatMessage) => {
     return new ChatMessage({ content: message.content, role: message.role });
   }
 };
+
+export const dynamic = "force-dynamic";
 
 export async function POST(req: Request) {
   try {
