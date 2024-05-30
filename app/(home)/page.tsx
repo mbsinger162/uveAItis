@@ -64,7 +64,7 @@ export default function Home() {
     if (messageListRef.current) {
       messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
     }
-  }, [messages]);
+  }, [input]);
 
   //prevent empty submissions
   const handleEnter = (e: any) => {
