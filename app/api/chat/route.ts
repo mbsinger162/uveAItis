@@ -36,7 +36,6 @@ export async function POST(req: Request) {
     const chatModel = new ChatOpenAI({
       modelName: "gpt-3.5-turbo",
       streaming: true,
-      cache: true,
     });
 
     const embeddings = loadEmbeddingsModel();
