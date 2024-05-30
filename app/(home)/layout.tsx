@@ -1,3 +1,5 @@
+export const maxDuration = 120;
+
 const HomeLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="mx-auto flex flex-col space-y-4">
