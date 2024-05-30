@@ -36,6 +36,7 @@ export async function POST(req: Request) {
     const chatModel = new ChatOpenAI({
       modelName: "gpt-4",
       streaming: true,
+      maxTokens: 8192,
     });
 
     const embeddings = loadEmbeddingsModel();
