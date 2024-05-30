@@ -5,6 +5,8 @@ import { loadEmbeddingsModel, loadVectorStore } from "@/utils/pinecone";
 import { createRAGChain } from "@/utils/ragChain";
 import { Document } from "@langchain/core/documents";
 
+export const dynamic = "force-dynamic";
+
 const formatVercelMessages = (message: VercelChatMessage) => {
   if (message.role === "user") {
     return new HumanMessage(message.content);
@@ -36,6 +38,7 @@ export async function POST(req: Request) {
     const chatModel = new ChatOpenAI({
       modelName: "gpt-4",
       streaming: true,
+      maxTokens: 4000,
     });
 
     const embeddings = loadEmbeddingsModel();
