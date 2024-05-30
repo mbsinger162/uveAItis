@@ -15,10 +15,7 @@ import {
 import { Document } from "@langchain/core/documents";
 
 function extractFileName(path: string) {
-  // Extract the file name with the extension
-  const fileNameWithExtension = path.split("/").pop() || "";
-
-  // Remove the file extension
+  const fileNameWithExtension = path.split(/[/\\]/).pop() || "";
   const fileNameWithoutExtension = fileNameWithExtension
     .split(".")
     .slice(0, -1)
@@ -144,7 +141,11 @@ export default function Home() {
 
                   {sources && (
                     <div className="p-5" key={`sourceDocsAccordion-${index}`}>
-                      <Accordion type="single" collapsible className="flex-col">
+                      <Accordion
+                        type="single"
+                        collapsible
+                        className="flex-col text-black"
+                      >
                         {sources.map((doc: Document, index: number) => (
                           <div key={`messageSourceDocs-${index}`}>
                             <AccordionItem value={`item-${index}`}>
