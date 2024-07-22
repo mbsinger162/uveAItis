@@ -37,8 +37,7 @@ export async function POST(req: Request) {
 
     const chatModel = new ChatOpenAI({
       modelName: "gpt-4o",
-      streaming: true,
-      maxTokens: 4000,
+      streaming: true
     });
 
     const embeddings = loadEmbeddingsModel();
@@ -54,7 +53,7 @@ export async function POST(req: Request) {
     });
 
     const retriever = (await vectorstore).asRetriever({
-      k: 10,
+      k: 20,
       callbacks: [
         {
           handleRetrieverEnd(documents) {
