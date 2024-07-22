@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Eye consult",
-  description: "Chat With Eye Care Reference Texts",
+  title: "uveAItis",
+  description: "Uveitis AI Chatbot",
 };
 
 export default function RootLayout({

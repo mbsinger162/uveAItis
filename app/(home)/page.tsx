@@ -15,7 +15,7 @@ import {
 import { Document } from "@langchain/core/documents";
 
 function extractFileName(path: string) {
-  const fileNameWithExtension = path.split(/[/\\]/).pop() || "";
+  const fileNameWithExtension = path?.split(/[/\\]/).pop() || "";
   const fileNameWithoutExtension = fileNameWithExtension
     .split(".")
     .slice(0, -1)
@@ -44,14 +44,21 @@ export default function Home() {
     onResponse(response) {
       const sourcesHeader = response.headers.get("x-sources");
       const sources = sourcesHeader ? JSON.parse(atob(sourcesHeader)) : [];
-
+  
       const messageIndexHeader = response.headers.get("x-message-index");
       if (sources.length && messageIndexHeader !== null) {
+        const sourcesWithMetadata = sources.map((source: any) => ({
+          ...source,
+          pmid: source.metadata.pmid,
+          title: source.metadata.title,
+          authors: source.metadata.authors,
+        }));
+  
         setSourcesForMessages({
           ...sourcesForMessages,
-          [messageIndexHeader]: sources,
+          [messageIndexHeader]: sourcesWithMetadata,
         });
-
+  
         console.log(sourcesForMessages);
       }
     },
@@ -75,14 +82,14 @@ export default function Home() {
   return (
     <div className="mx-auto flex flex-col gap-4">
       <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
-        Chat With Eye Care Reference Texts
+        uveAItis: The Uveitis AI Chatbot
       </h1>
       <main className={styles.main}>
         <div className={styles.cloud}>
           <div ref={messageListRef} className={styles.messagelist}>
             <div className={styles.apimessage}>
               <Image
-                src="/eye.png"
+                src="/UveAItis2.png"
                 alt="AI"
                 width="40"
                 height="40"
@@ -91,7 +98,7 @@ export default function Home() {
               />
               <div className={styles.markdownanswer}>
                 <ReactMarkdown>
-                  Hi, what question do you have about eye care?
+                  Hi, what question do you have about uveitis care?
                 </ReactMarkdown>
               </div>
             </div>
@@ -104,7 +111,7 @@ export default function Home() {
                 icon = (
                   <Image
                     key={index}
-                    src="/eye.png"
+                    src="/UveAItis2.png"
                     alt="AI"
                     width="40"
                     height="40"
@@ -155,9 +162,17 @@ export default function Home() {
                               <AccordionContent>
                                 <ReactMarkdown>{doc.pageContent}</ReactMarkdown>
                                 <p className="mt-2">
-                                  <b>Source: </b>
-                                  {extractFileName(doc.metadata.source)}
-                                </p>
+                                <b>PMID: </b>
+                                {doc.pmid}
+                              </p>
+                              <p>
+                                <b>Title: </b>
+                                {doc.title}
+                              </p>
+                              <p>
+                                <b>Authors: </b>
+                                {doc.authors}
+                              </p>
                               </AccordionContent>
                             </AccordionItem>
                           </div>
@@ -165,6 +180,7 @@ export default function Home() {
                       </Accordion>
                     </div>
                   )}
+
                 </>
               );
             })}
@@ -187,7 +203,7 @@ export default function Home() {
                 placeholder={
                   isLoading
                     ? "Waiting for response..."
-                    : "What is the differential diagnosis for a red painful eye?"
+                    : "Type question here..."
                 }
                 className={styles.textarea}
               />
