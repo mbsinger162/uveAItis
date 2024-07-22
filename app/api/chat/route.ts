@@ -53,7 +53,7 @@ export async function POST(req: Request) {
     });
 
     const retriever = (await vectorstore).asRetriever({
-      k: 20,
+      k: 10,
       callbacks: [
         {
           handleRetrieverEnd(documents) {
