@@ -16,6 +16,8 @@ import { Document } from "@langchain/core/documents";
 
 interface CustomDocument extends Document {
   pmid?: string | number;
+  title?: string;
+  authors?: string;
 }
 
 function extractFileName(path: string) {
@@ -29,9 +31,7 @@ function extractFileName(path: string) {
 }
 
 export default function Home() {
-  const [sourcesForMessages, setSourcesForMessages] = useState<
-    Record<string, any>
-  >({});
+  const [sourcesForMessages, setSourcesForMessages] = useState<Record<string, CustomDocument[]>>({});
 
   const messageListRef = useRef<HTMLDivElement>(null);
   const textAreaRef = useRef<HTMLTextAreaElement>(null);
@@ -56,7 +56,7 @@ export default function Home() {
           pmid: source.metadata.pmid,
           title: source.metadata.title,
           authors: source.metadata.authors,
-        }));
+        })) as CustomDocument[];
   
         setSourcesForMessages({
           ...sourcesForMessages,
@@ -157,7 +157,7 @@ export default function Home() {
                         collapsible
                         className="flex-col text-black"
                       >
-                        {sources.map((doc: Document, index: number) => (
+                        {sources.map((doc: CustomDocument, index: number) => (
                           <div key={`messageSourceDocs-${index}`}>
                             <AccordionItem value={`item-${index}`}>
                               <AccordionTrigger>
