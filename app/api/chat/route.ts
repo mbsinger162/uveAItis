@@ -22,8 +22,6 @@ export const runtime = "edge";
 
 export async function POST(req: Request) {
   try {
-    console.log("Starting POST request processing");
-
     const body = await req.json();
     const messages = body.messages ?? [];
 
@@ -31,26 +29,22 @@ export async function POST(req: Request) {
       throw new Error("No messages provided.");
     }
 
-    console.log(`Processing ${messages.length} messages`);
-
     const formattedPreviousMessages = messages
       .slice(0, -1)
       .map(formatVercelMessages);
 
     const currentMessage = messages[messages.length - 1].content;
 
-    console.log("Initializing ChatOpenAI model");
     const chatModel = new ChatOpenAI({
-      modelName: "gpt-4o",  // Changed from "gpt-4o" to "gpt-4"
+      modelName: "gpt-4o",
       streaming: true,
       maxTokens: 4000,
     });
 
-    console.log("Loading embeddings model");
     const embeddings = loadEmbeddingsModel();
 
-    console.log("Loading vector store");
     const vectorstore = loadVectorStore({
+      //   namespace
       embeddings,
     });
 
@@ -59,29 +53,24 @@ export async function POST(req: Request) {
       resolveWithDocuments = resolve;
     });
 
-    console.log("Setting up retriever");
     const retriever = (await vectorstore).asRetriever({
       k: 20,
       callbacks: [
         {
           handleRetrieverEnd(documents) {
-            console.log(`Retrieved ${documents.length} documents`);
             resolveWithDocuments(documents);
           },
         },
       ],
     });
 
-    console.log("Creating RAG chain");
     const ragChain = await createRAGChain(chatModel, retriever);
 
-    console.log("Streaming response");
     const stream = await ragChain.stream({
       input: currentMessage,
       chat_history: formattedPreviousMessages,
     });
 
-    console.log("Waiting for documents");
     const documents = await documentPromise;
     const serializedSources = Buffer.from(
       JSON.stringify(
@@ -94,10 +83,9 @@ export async function POST(req: Request) {
       )
     ).toString("base64");
 
-    console.log("Converting to byte stream");
+    // Convert to bytes so that we can pass into the HTTP response
     const byteStream = stream.pipeThrough(new TextEncoderStream());
 
-    console.log("Sending response");
     return new Response(byteStream, {
       headers: {
         "x-message-index": (formattedPreviousMessages.length + 1).toString(),
@@ -105,16 +93,7 @@ export async function POST(req: Request) {
       },
     });
   } catch (error) {
-    console.error("Error in POST function:", error);
-    return new Response(
-      JSON.stringify({ 
-        error: "Internal server error", 
-        details: error instanceof Error ? error.message : String(error)
-      }), 
-      { 
-        status: 500, 
-        headers: { "Content-Type": "application/json" } 
-      }
-    );
+    console.error(error);
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }
