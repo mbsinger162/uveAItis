@@ -41,7 +41,7 @@ export async function POST(req: Request) {
 
     console.log("Initializing ChatOpenAI model");
     const chatModel = new ChatOpenAI({
-      modelName: "gpt-4",  // Changed from "gpt-4o" to "gpt-4"
+      modelName: "gpt-4o",  // Changed from "gpt-4o" to "gpt-4"
       streaming: true,
       maxTokens: 4000,
     });
