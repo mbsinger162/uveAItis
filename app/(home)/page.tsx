@@ -14,6 +14,10 @@ import {
 } from "@/components/ui/accordion";
 import { Document } from "@langchain/core/documents";
 
+interface CustomDocument extends Document {
+  pmid?: string | number;
+}
+
 function extractFileName(path: string) {
   const fileNameWithExtension = path?.split(/[/\\]/).pop() || "";
   const fileNameWithoutExtension = fileNameWithExtension
