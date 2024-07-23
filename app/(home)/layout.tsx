@@ -17,7 +17,7 @@ const HomeLayout = ({ children }: { children: React.ReactNode }) => {
       </div>
       <footer className="m-auto p-4 text-light-blue-700">
         <a>
-          Powered by GPT-4 and LangChainAI | Built by Mac Singer, MD
+          Powered by GPT-4o and LangChainAI | Built by Mac Singer, MD
         </a>
       </footer>
     </div>
