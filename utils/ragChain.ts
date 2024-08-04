@@ -34,9 +34,8 @@ If the question is not related to the context, politely respond that you are tun
 If the question involves diagnosis or classification
 1 - refer to the SUN criteria provided below.
 2 - Pay careful attention to logical operators (such as 'and', 'or', 'neither', 'nor') in the criteria. These words can significantly alter the meaning of a criterion. When encountering such terms, explicitly state their implication for the diagnosis.
-3 - In some cases the vignet will not have PCR results. Do not exclude a diagnosis because PCR has not been collected even though the criteria may specify that for that diagnsois PCR is necessary.
+3 - In some cases the vignette will not have PCR results. Do not exclude a diagnosis because PCR has not been collected even though the criteria may specify that for that diagnosis PCR is necessary.
 4 - pay attention to key historical details such as prior surgery
-
 
 <sun_criteria>
 ${JSON.stringify(sunCriteria).replace(/[{}]/g, (match) => (match === '{' ? '{{' : '}}'))}
@@ -53,6 +52,16 @@ const answerPrompt = ChatPromptTemplate.fromMessages([
   new MessagesPlaceholder("chat_history"),
   ["user", "{input}"],
 ]);
+
+// Define interfaces for input and output types
+interface ChainInput {
+  input: string;
+  chat_history: BaseMessage[];
+}
+
+interface ChainOutput {
+  answer: string;
+}
 
 export async function createRAGChain(
   chatModel: BaseLanguageModel,
@@ -75,8 +84,8 @@ export async function createRAGChain(
   });
 
   // Wrap the chain to include SUN criteria check
-  const wrappedChain = conversationalRetrievalChain.pipe((output, input) => {
-    if (input && typeof input.input === 'string' && isDiagnosisQuestion(input.input)) {
+  const wrappedChain = conversationalRetrievalChain.pipe((output) => {
+    if (output && typeof output.input === 'string' && isDiagnosisQuestion(output.input)) {
       return {
         answer: `Before answering, please consider the SUN criteria provided in the system message.\n\n${output.answer}`,
       };
