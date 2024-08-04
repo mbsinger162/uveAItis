@@ -1,9 +1,11 @@
 import { ChatOpenAI } from "@langchain/openai";
+import { ChatAnthropic } from "@langchain/anthropic";
 import { HumanMessage, AIMessage, ChatMessage } from "@langchain/core/messages";
 import type { Message as VercelChatMessage } from "ai";
 import { loadEmbeddingsModel, loadVectorStore } from "@/utils/pinecone";
 import { createRAGChain } from "@/utils/ragChain";
 import { Document } from "@langchain/core/documents";
+
 
 const formatVercelMessages = (message: VercelChatMessage) => {
   if (message.role === "user") {
@@ -34,6 +36,12 @@ export async function POST(req: Request) {
       .map(formatVercelMessages);
 
     const currentMessage = messages[messages.length - 1].content;
+
+    // const chatModel = new ChatAnthropic({
+    //   apiKey: process.env.ANTHROPIC_API_KEY,
+    //   modelName: "claude-3-5-sonnet-20240620",
+    //   streaming: true
+    // });
 
     const chatModel = new ChatOpenAI({
       modelName: "gpt-4o",

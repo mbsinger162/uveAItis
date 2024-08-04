@@ -18,6 +18,7 @@ interface CustomDocument extends Document {
   pmid?: string | number;
   title?: string;
   authors?: string;
+  source?: string;
 }
 
 function extractFileName(path: string) {
@@ -56,6 +57,7 @@ export default function Home() {
           pmid: source.metadata.pmid,
           title: source.metadata.title,
           authors: source.metadata.authors,
+          source: source.metadata.source,
         })) as CustomDocument[];
   
         setSourcesForMessages({
@@ -74,7 +76,6 @@ export default function Home() {
     }
   }, [input]);
 
-  //prevent empty submissions
   const handleEnter = (e: any) => {
     if (e.key === "Enter" && input) {
       handleSubmit(e);
@@ -165,18 +166,30 @@ export default function Home() {
                               </AccordionTrigger>
                               <AccordionContent>
                                 <ReactMarkdown>{doc.pageContent}</ReactMarkdown>
-                                <p className="mt-2">
-                                <b>PMID: </b>
-                                {doc.pmid}
-                              </p>
-                              <p>
-                                <b>Title: </b>
-                                {doc.title}
-                              </p>
-                              <p>
-                                <b>Authors: </b>
-                                {doc.authors}
-                              </p>
+                                {doc.pmid && (
+                                  <p className="mt-2">
+                                    <b>PMID: </b>
+                                    {doc.pmid}
+                                  </p>
+                                )}
+                                {doc.title && (
+                                  <p>
+                                    <b>Title: </b>
+                                    {doc.title}
+                                  </p>
+                                )}
+                                {doc.authors && (
+                                  <p>
+                                    <b>Authors: </b>
+                                    {doc.authors}
+                                  </p>
+                                )}
+                                {doc.source && (
+                                  <p>
+                                    <b>Source: </b>
+                                    {doc.source}
+                                  </p>
+                                )}
                               </AccordionContent>
                             </AccordionItem>
                           </div>
@@ -184,7 +197,6 @@ export default function Home() {
                       </Accordion>
                     </div>
                   )}
-
                 </>
               );
             })}

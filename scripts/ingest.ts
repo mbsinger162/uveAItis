@@ -1,10 +1,14 @@
+import dotenv from "dotenv";
+dotenv.config({ path: ".env" });
+
 import { Pinecone } from "@pinecone-database/pinecone";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { PineconeStore } from "@langchain/pinecone";
 import { Document } from "langchain/document";
+import fs from "fs";
+import csv from "csv-parser";
 
-// This function could be called from an API route or during the build process
-export async function loadVectorDB() {
+const loadVectorDB = async () => {
   console.log("Starting...");
 
   // Check environment variables
@@ -25,23 +29,31 @@ export async function loadVectorDB() {
     console.log(`Accessing Pinecone index: ${process.env.PINECONE_INDEX}`);
     const index = pinecone.Index(process.env.PINECONE_INDEX!);
 
-    console.log("Loading data...");
-    // Instead of reading from a CSV, you might fetch this data from an API or database
-    const docs: Document[] = [
-      // Your document data here
-      // Example:
-      // new Document({
-      //   pageContent: "Sample abstract",
-      //   metadata: {
-      //     pmid: "12345",
-      //     title: "Sample Title",
-      //     authors: "Author 1, Author 2",
-      //     citation_count: "10",
-      //   },
-      // }),
-    ];
+    console.log("Loading CSV data...");
+    const docs: Document[] = [];
 
-    console.log(`Loaded ${docs.length} documents.`);
+    await new Promise((resolve, reject) => {
+      fs.createReadStream("uveitis_abstracts_final4.csv")
+        .pipe(csv())
+        .on("data", (row) => {
+          docs.push(
+            new Document({
+              pageContent: row.abstract,
+              metadata: {
+                pmid: row.pmid,
+                title: row.title,
+                citation_count: row.citation_count,
+                authors: row.authors,
+              },
+            })
+          );
+        })
+        .on("end", () => {
+          console.log(`Loaded ${docs.length} documents.`);
+          resolve(null);
+        })
+        .on("error", reject);
+    });
 
     console.log("Ingesting documents...");
     const embeddings = new OpenAIEmbeddings({ modelName: "text-embedding-3-small" });
@@ -61,12 +73,8 @@ export async function loadVectorDB() {
       console.error(error);
     }
   }
-}
+};
 
-// If you want to run this as a script during build time:
-// if (require.main === module) {
-//   loadVectorDB().catch((error) => {
-//     console.error("An unexpected error occurred:", error);
-//     process.exit(1);
-//   });
-// }
+loadVectorDB().catch((error) => {
+  console.error("An unexpected error occurred:", error);
+});

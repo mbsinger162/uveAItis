@@ -7,14 +7,18 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "ingest": "npx ts-node ./scripts/ingest.ts"
+    "ingest": "npx ts-node ./scripts/ingest.ts",
+    "ingest_sun": "npx ts-node ./scripts/ingest_sun.ts"
   },
   "dependencies": {
+    "@langchain/anthropic": "^0.2.11",
+    "@langchain/core": "^0.2.18",
     "@langchain/pinecone": "^0.0.7",
     "@pinecone-database/pinecone": "^2.2.1",
     "@radix-ui/react-accordion": "^1.1.2",
     "ai": "^3.1.18",
     "clsx": "^2.1.1",
+    "csv-parse": "^5.5.6",
     "csv-parser": "^3.0.0",
     "dotenv": "^16.4.5",
     "langchain": "^0.2.3",
