@@ -1,5 +1,5 @@
 import { ChatOpenAI } from "@langchain/openai";
-import { ChatAnthropic } from "@langchain/anthropic";
+// import { ChatAnthropic } from "@langchain/anthropic";
 import { HumanMessage, AIMessage, ChatMessage } from "@langchain/core/messages";
 import type { Message as VercelChatMessage } from "ai";
 import { loadEmbeddingsModel, loadVectorStore } from "@/utils/pinecone";
