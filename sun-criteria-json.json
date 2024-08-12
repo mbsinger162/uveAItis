@@ -1,0 +1,701 @@
+{
+  "uveitis_classifications": [
+    {
+      "name": "Cytomegalovirus Anterior Uveitis",
+      "criteria": [
+        {
+          "type": "Evidence of anterior uveitis",
+          "details": [
+            "anterior chamber cells",
+            "if anterior vitreous cells are present, anterior chamber inflammation should be present",
+            "no evidence of retinitis"
+          ]
+        },
+        {
+          "type": "Evidence of cytomegalovirus infection in the eye",
+          "details": [
+            "Positive PCR for cytomegalovirus on aqueous specimen"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Positive serology for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)",
+        "Aqueous specimen PCR positive for herpes simplex virus or varicella zoster virus"
+      ]
+    },
+    {
+      "name": "Herpes Simplex Anterior Uveitis",
+      "criteria": [
+        {
+          "type": "Evidence of anterior uveitis",
+          "details": [
+            "anterior chamber cells",
+            "if anterior vitreous cells are present, severity is less than anterior chamber inflammation",
+            "no evidence of retinitis"
+          ]
+        },
+        {
+          "type": "Unilateral uveitis",
+          "details": [
+            "unless there is a positive aqueous PCR for herpes simplex virus"
+          ]
+        },
+        {
+          "type": "Evidence of herpes simplex infection in the eye",
+          "details": [
+            "aqueous humor PCR positive for herpes simplex virus OR",
+            "sectoral iris atrophy in a patient <50 years of age OR",
+            "herpes simplex keratitis"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Concomitant dermatomal/cutaneous varicella zoster virus (unless aqueous specimen PCR positive for herpes simplex virus)",
+        "Positive serology for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)",
+        "Aqueous specimen PCR positive for cytomegalovirus or varicella zoster virus"
+      ]
+    },
+    {
+      "name": "Varicella Zoster Virus Anterior Uveitis",
+      "criteria": [
+        {
+          "type": "Evidence of anterior uveitis",
+          "details": [
+            "anterior chamber cells",
+            "if anterior vitreous cells are present, severity is less than anterior chamber inflammation",
+            "no evidence of retinitis"
+          ]
+        },
+        {
+          "type": "Unilateral uveitis",
+          "details": [
+            "unless there is a positive aqueous PCR for varicella zoster virus"
+          ]
+        },
+        {
+          "type": "Evidence of varicella zoster virus infection in the eye",
+          "details": [
+            "aqueous humor PCR positive for varicella zoster virus OR",
+            "sectoral iris atrophy in a patient > 60 years of age OR",
+            "concurrent or recent dermatomal Herpes zoster"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Positive serology for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)",
+        "Aqueous specimen PCR positive for cytomegalovirus or herpes simplex virus"
+      ]
+    },
+    {
+      "name": "Fuchs Uveitis Syndrome",
+      "criteria": [
+        {
+          "type": "Evidence of anterior uveitis",
+          "details": [
+            "anterior chamber cells",
+            "if vitreous cells are present, anterior chamber inflammation also should be present",
+            "no evidence of active retinitis"
+          ]
+        },
+        {
+          "type": "Unilateral uveitis"
+        },
+        {
+          "type": "Evidence of Fuchs uveitis syndrome",
+          "details": [
+            "heterochromia OR",
+            "unilateral diffuse iris atrophy AND stellate keratic precipitates"
+          ]
+        },
+        {
+          "type": "Neither endotheliitis nor nodular, coin-shaped endothelial lesions"
+        }
+      ],
+      "exclusions": [
+        "Positive serology for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)",
+        "Aqueous specimen PCR positive for cytomegalovirus, herpes simplex virus or varicella zoster virus"
+      ]
+    },
+    {
+      "name": "Juvenile Idiopathic Arthritis-associated Chronic Anterior Uveitis",
+      "criteria": [
+        {
+          "type": "Evidence of anterior uveitis",
+          "details": [
+            "anterior chamber cells",
+            "if anterior vitreous cells are present, severity is less than anterior chamber inflammation"
+          ]
+        },
+        {
+          "type": "Chronic anterior uveitis or, if at initial diagnosis, uveitis is of insidious onset and asymptomatic/ minimally symptomatic"
+        },
+        {
+          "type": "Juvenile idiopathic arthritis of the following subtypes",
+          "details": [
+            "Oligoarthritis, persistent or extended, OR",
+            "Rheumatoid factor negative polyarthritis, OR",
+            "Juvenile psoriatic arthritis, other than psoriatic spondylitis"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Enthesitis-related arthritis",
+        "Positive serologic test for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata) or other granulomatous disease",
+        "Aqueous specimen PCR positive for cytomegalovirus, herpes simplex virus, or varicella zoster virus"
+      ]
+    },
+    {
+      "name": "Spondyloarthritis/HLA-B27-associated Anterior Uveitis",
+      "criteria": [
+        {
+          "type": "Evidence of anterior uveitis",
+          "details": [
+            "anterior chamber cells",
+            "if anterior vitreous cells are present, severity is less than anterior chamber inflammation"
+          ]
+        },
+        {
+          "type": "Characteristic uveitis course",
+          "details": [
+            "Acute or recurrent acute, unilateral or unilateral alternating course OR",
+            "Chronic course with a history of a recurrent acute, unilateral or unilateral alternating course evolving into chronic course"
+          ]
+        },
+        {
+          "type": "ASAS-defined spondyloarthritis (axial or peripheral) and/or HLA-B27-positive"
+        },
+        {
+          "type": "Chronic uveitis with both ASAS-defined spondyloarthritis (axial or peripheral) AND HLA-B27-positive"
+        }
+      ],
+      "exclusions": [
+        "Positive serology for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)",
+        "Aqueous specimen PCR positive for cytomegalovirus, Herpes simplex virus or Varicella zoster virus"
+      ]
+    },
+    {
+      "name": "Tubulointerstitial Nephritis with Uveitis Syndrome",
+      "criteria": [
+        {
+          "type": "Evidence of anterior uveitis",
+          "details": [
+            "anterior chamber cells",
+            "if vitritis or choroiditis or retinal vascular changes are present, anterior chamber inflammation also should be present"
+          ]
+        },
+        {
+          "type": "Evidence of tubulointerstitial nephritis",
+          "details": [
+            "Positive renal biopsy OR",
+            "Elevated urine β-microglobulin and either abnormal urine analysis or elevated serum creatinine"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Positive serology for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)"
+      ]
+    },
+    {
+      "name": "Multiple Sclerosis-associated Intermediate Uveitis",
+      "criteria": [
+        {
+          "type": "Evidence of intermediate uveitis",
+          "details": [
+            "vitreous cells AND/OR vitreous haze",
+            "if anterior chamber cells are present, anterior chamber inflammation less than vitreous",
+            "no evidence of retinitis or choroiditis"
+          ]
+        },
+        {
+          "type": "Evidence of multiple sclerosis using the Revised McDonald Diagnostic Criteria"
+        }
+      ],
+      "exclusions": [
+        "Positive serology for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)",
+        "Positive serology for Lyme disease, either IgG or IgM (e.g. positive ELISA AND Western blot with requisite number of bands for assay used)"
+      ]
+    },
+    {
+      "name": "Pars Planitis",
+      "criteria": [
+        {
+          "type": "Evidence of intermediate uveitis",
+          "details": [
+            "vitreous cells AND/OR vitreous haze",
+            "if anterior chamber cells are present, anterior chamber inflammation severity less than vitreous severity",
+            "no evidence of retinitis or choroiditis",
+            "no retinal vascular occlusion in posterior pole & mid-periphery"
+          ]
+        },
+        {
+          "type": "Evidence of pars planitis",
+          "details": [
+            "vitreous snowballs OR",
+            "pars plana snowbanks"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Multiple sclerosis, defined by the McDonald criteria",
+        "Positive serology for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)",
+        "Positive serology for Lyme disease, either IgG or IgM (e.g. positive ELISA AND Western blot with requisite number of bands for assay used)"
+      ]
+    },
+    {
+      "name": "Intermediate Uveitis, Non-Pars Planitis Type",
+      "criteria": [
+        {
+          "type": "Evidence of intermediate uveitis",
+          "details": [
+            "vitreous cells AND/OR vitreous haze",
+            "if anterior chamber cells are present, anterior chamber inflammation less than vitreous",
+            "no evidence of retinitis"
+          ]
+        },
+        {
+          "type": "No evidence of pars planitis",
+          "details": [
+            "neither vitreous snowballs NOR",
+            "pars plana snowbanks"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Multiple sclerosis, defined by the McDonald criteria",
+        "Positive serology for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)",
+        "Positive serology for Lyme disease, either IgG or IgM (e.g. positive ELISA AND Western blot with requisite number of bands for assay used)",
+        "Evidence of intraocular lymphoma on diagnostic vitrectomy"
+      ]
+    },
+    {
+      "name": "Acute Posterior Multifocal Placoid Pigment Epitheliopathy",
+      "criteria": [
+        {
+          "type": "Paucifocal or multifocal choroidal lesions on clinical examination",
+          "details": [
+            "Plaque-like or placoid appearance to the lesions"
+          ]
+        },
+        {
+          "type": "Characteristic fluorescein angiogram in the acute phase of the disease",
+          "details": [
+            "lesions are hypofluorescent early and diffusely hyperfluorescent late"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Positive serologic test for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)"
+      ]
+    },
+    {
+      "name": "Birdshot Chorioretinitis",
+      "criteria": [
+        {
+          "type": "Characteristic bilateral multifocal choroiditis on ophthalmoscopy",
+          "details": [
+            "Multifocal cream-colored or yellow-orange, oval or round choroidal lesions ('birdshot spots')"
+          ]
+        },
+        {
+          "type": "Absent to mild anterior chamber inflammation",
+          "details": [
+            "Absent to mild anterior chamber cells AND",
+            "No keratic precipitates AND",
+            "No posterior synechiae"
+          ]
+        },
+        {
+          "type": "Absent to moderate vitritis"
+        },
+        {
+          "type": "Multifocal choroiditis with",
+          "details": [
+            "Positive HLA-A29 test AND either",
+            "Characteristic 'birdshot' spots (multifocal cream-colored or yellow-orange, oval or round choroidal lesions) on ophthalmoscopy OR",
+            "Characteristic indocyanine green angiogram (multifocal hypofluorescent spots) without characteristic 'birdshot' spots on ophthalmoscopy"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Positive serologic test for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)",
+        "Evidence of intraocular lymphoma on diagnostic vitrectomy or tissue biopsy"
+      ]
+    },
+    {
+      "name": "Multiple Evanescent White Dot Syndrome",
+      "criteria": [
+        {
+          "type": "Multifocal chorioretinal gray-white spots with foveal granularity"
+        },
+        {
+          "type": "Characteristic fluorescein angiogram or optical coherence tomogram (OCT)",
+          "details": [
+            "'Wreath-like' hyperfluorescent lesions on fluorescein angiogram OR",
+            "Hyper-reflective lesions on OCT extending from the retinal pigment epithelium, into and/or through the ellipsoid zone into the outer nuclear layer of the retina"
+          ]
+        },
+        {
+          "type": "Absent to mild anterior chamber and vitreous inflammation"
+        }
+      ],
+      "exclusions": [
+        "Positive serologic test for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)",
+        "Bilateral simultaneous disease onset"
+      ]
+    },
+    {
+      "name": "Multifocal Choroiditis with Panuveitis",
+      "criteria": [
+        {
+          "type": "Multifocal choroiditis",
+          "details": [
+            "Oval or round lesions",
+            "Predominant lesion size >125 µm"
+          ]
+        },
+        {
+          "type": "Characteristic appearance",
+          "details": [
+            "'Punched-out atrophic' chorioretinal scars OR",
+            "Active lesions with more than minimal vitreous inflammation"
+          ]
+        },
+        {
+          "type": "Inflammatory lesions and/or characteristic scars involving the mid-periphery or periphery with or without posterior pole involvement"
+        }
+      ],
+      "exclusions": [
+        "Positive serologic test for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)",
+        "In tuberculosis-endemic regions or tuberculosis-exposed individuals, evidence of infection with Mycobacterium tuberculosis"
+      ]
+    },
+    {
+      "name": "Punctate Inner Choroiditis",
+      "criteria": [
+        {
+          "type": "Multifocal choroidal inflammatory lesions",
+          "details": [
+            "Predominant lesion size <250 µm",
+            "Punctate lesion appearance"
+          ]
+        },
+        {
+          "type": "Lesion involvement of posterior pole with or without mid-periphery"
+        },
+        {
+          "type": "Absent to minimal anterior chamber and vitreous inflammation"
+        }
+      ],
+      "exclusions": [
+        "Positive serologic test for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)"
+      ]
+    },
+    {
+      "name": "Serpiginous Choroiditis",
+      "criteria": [
+        {
+          "type": "Paucifocal or multifocal choroiditis with an ameboid or serpentine shape"
+        },
+        {
+          "type": "Characteristic imaging",
+          "details": [
+            "Fluorescein angiogram with early diffuse hypofluorescent lesions and late hyperfluorescent lesion borders OR",
+            "Fundus auto-fluorescence with hypo-autofluorescent lesions with hyper-autofluorescent borders"
+          ]
+        },
+        {
+          "type": "Absent to minimal anterior chamber and vitreous inflammation"
+        }
+      ],
+      "exclusions": [
+        "Positive serologic test for syphilis using a treponemal test",
+        "Evidence of sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)",
+        "Evidence of infection with Mycobacterium tuberculosis"
+      ]
+    },
+    {
+      "name": "Behçet Disease Uveitis",
+      "criteria": [
+        {
+          "type": "Compatible uveitic syndrome",
+          "details": [
+            "Anterior uveitis",
+            "Anterior and intermediate uveitis",
+            "Posterior uveitis with retinal vasculitis and/or focal retinal infiltrates",
+            "Panuveitis with retinal vasculitis and/or focal retinal infiltrates"
+          ]
+        },
+        {
+          "type": "A diagnosis of Behçet disease using International Study Group for Behçet Disease criteria"
+        }
+      ],
+      "exclusions": [
+        "Positive serology for syphilis using a treponemal test",
+        "Evidence for sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)"
+      ]
+    },
+    {
+      "name": "Sarcoidosis-Associated Uveitis",
+      "criteria": [
+        {
+          "type": "Compatible uveitic picture",
+          "details": [
+            "Anterior uveitis OR",
+            "Intermediate or anterior/intermediate uveitis OR",
+            "Posterior uveitis with either choroiditis (paucifocal choroidal nodule(s) or multifocal choroiditis) OR",
+            "Panuveitis with choroiditis or retinal vascular sheathing or retinal vascular occlusion"
+          ]
+        },
+        {
+          "type": "Evidence of sarcoidosis",
+          "details": [
+            "Tissue biopsy demonstrating non-caseating granulomata OR",
+            "Bilateral hilar adenopathy on chest imaging"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Positive serology for syphilis using a treponemal test",
+        "Evidence of infection with Mycobacterium tuberculosis"
+      ]
+    },
+    {
+      "name": "Sympathetic Ophthalmia",
+      "criteria": [
+        {
+          "type": "History of unilateral ocular trauma or surgery"
+        },
+        {
+          "type": "Ocular inflammation",
+          "details": [
+            "Bilateral OR",
+            "If there is no view in the inciting eye (e.g. enucleated, phthisis, opaque cornea), then detectable inflammation in the sympathizing eye"
+          ]
+        },
+        {
+          "type": "Evidence of more than isolated anterior uveitis",
+          "details": [
+            "Anterior chamber and vitreous inflammation OR",
+            "Panuveitis with choroidal involvement"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Positive serology for syphilis using a treponemal test",
+        "Evidence for sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)"
+      ]
+    },
+    {
+      "name": "Early-Stage Vogt-Koyanagi-Harada Disease",
+      "criteria": [
+        {
+          "type": "Evidence of Harada's disease",
+          "details": [
+            "Serous (exudative) retinal detachment AND",
+            "Multi-loculated appearance on fluorescein angiogram OR",
+            "Septae on optical coherence tomogram"
+          ]
+        },
+        {
+          "type": "Panuveitis with >2 of the following neurologic symptoms or signs",
+          "details": [
+            "Headache OR",
+            "Tinnitus OR",
+            "Dysacusis OR",
+            "Meningismus OR",
+            "Cerebrospinal fluid pleocytosis"
+          ]
+        },
+        {
+          "type": "No history of penetrating ocular trauma or vitreoretinal surgery prior to disease onset"
+        }
+      ],
+      "exclusions": [
+        "Positive serology for syphilis using a treponemal test",
+        "Evidence for sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)"
+      ]
+    },
+    {
+      "name": "Late-Stage Vogt-Koyanagi-Harada Disease",
+      "criteria": [
+        {
+          "type": "History of early-stage Vogt-Koyanagi-Harada disease"
+        },
+        {
+          "type": "Sunset glow fundus"
+        },
+        {
+          "type": "Uveitis AND >1 of the following cutaneous findings",
+          "details": [
+            "Vitiligo OR",
+            "Poliosis OR",
+            "Alopecia"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Positive serology for syphilis using a treponemal test",
+        "Evidence for sarcoidosis (either bilateral hilar adenopathy on chest imaging or tissue biopsy demonstrating non-caseating granulomata)"
+      ]
+    },
+    {
+      "name": "Acute Retinal Necrosis Syndrome",
+      "criteria": [
+        {
+          "type": "Necrotizing retinitis involving the peripheral retina"
+        },
+        {
+          "type": "Evidence of infection with either herpes simplex virus (HSV) or Varicella zoster virus (VZV)",
+          "details": [
+            "Positive PCR for either HSV or VZV from either an aqueous or vitreous specimen"
+          ]
+        },
+        {
+          "type": "Characteristic clinical picture",
+          "details": [
+            "Circumferential or confluent retinitis AND",
+            "Retinal vascular sheathing and/or occlusion AND",
+            "More than minimal vitritis"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Positive serology for syphilis using a treponemal test",
+        "Intraocular specimen PCR-positive for cytomegalovirus or Toxoplasma gondii (unless there is immune compromise, morphologic evidence for >1 infection, the characteristic clinical picture of acute retinal necrosis, and the intraocular fluid specimen has a positive PCR for either HSV or VZV)"
+      ]
+    },
+    {
+      "name": "Cytomegalovirus Retinitis",
+      "criteria": [
+        {
+          "type": "Necrotizing retinitis with indistinct borders due to numerous small (<50 μm) satellites"
+        },
+        {
+          "type": "Immune compromise",
+          "details": [
+            "Systemic (e.g. AIDS, organ transplant, chemotherapy) OR",
+            "Ocular (e.g. intraocular corticosteroids or chemotherapy)"
+          ]
+        },
+        {
+          "type": "Characteristic clinical picture",
+          "details": [
+            "Wedge-shaped area of retinitis OR",
+            "Hemorrhagic appearance of the retinitis OR",
+            "Granular appearance of the retinitis AND",
+            "Absent to mild vitritis"
+          ]
+        },
+        {
+          "type": "Evidence of intraocular infection with cytomegalovirus",
+          "details": [
+            "Positive PCR for cytomegalovirus from either the aqueous or vitreous specimen"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Positive serology for syphilis using a treponemal test",
+        "Intraocular specimen PCR-positive for herpes simplex virus, varicella zoster virus or Toxoplasma gondii (unless there is immune compromise, morphologic evidence for >1 infection, the characteristic picture of cytomegalovirus retinitis, and the intraocular fluid specimen also has a positive PCR for cytomegalovirus)"
+      ]
+    },
+    {
+      "name": "Syphilitic Uveitis",
+      "criteria": [
+        {
+          "type": "Uveitis with a compatible uveitic presentation",
+          "details": [
+            "Anterior uveitis OR",
+            "Intermediate uveitis or anterior/intermediate uveitis OR",
+            "Posterior or panuveitis with one of the following presentations",
+            "Placoid inflammation of the retinal pigment epithelium or",
+            "Multifocal inflammation of the retina/retinal pigment epithelium or",
+            "Necrotizing retinitis or",
+            "Retinal vasculitis"
+          ]
+        },
+        {
+          "type": "Evidence of infection with Treponema pallidum",
+          "details": [
+            "Positive treponemal test and non-treponemal test",
+            "Positive treponemal test with two different treponemal tests"
+          ]
+        }
+      ],
+      "exclusions": [
+        "History of adequate treatment for syphilitic uveitis"
+      ]
+    },
+    {
+      "name": "Toxoplasmic Retinitis",
+      "criteria": [
+        {
+          "type": "Focal or paucifocal necrotizing retinitis"
+        },
+        {
+          "type": "Evidence of infection with Toxoplasma gondii",
+          "details": [
+            "Positive PCR for Toxoplasma gondii from either the aqueous or vitreous specimen OR",
+            "Positive serum IgM antibodies against Toxoplasma gondii"
+          ]
+        },
+        {
+          "type": "Characteristic clinical ocular features",
+          "details": [
+            "Hyperpigmented and/or atrophic chorioretinal scar ('toxoplasmic scar') AND",
+            "Round or oval retinitis lesions OR",
+            "Recurrent acute (episodic) course"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Both negative IgG AND IgM antibodies against Toxoplasma gondii (unless there is a positive PCR for Toxoplasma gondii from an aqueous or vitreous specimen)",
+        "Positive serology for syphilis using a treponemal test",
+        "Intraocular specimen PCR-positive for herpes simplex virus, varicella zoster virus or cytomegalovirus (unless there is immune compromise, morphologic evidence for >1 infection, the characteristic picture of toxoplasmic retinitis, and the intraocular fluid specimen also has a positive PCR for T. gondii)"
+      ]
+    },
+    {
+      "name": "Tubercular Uveitis",
+      "criteria": [
+        {
+          "type": "Evidence of a tubercular uveitis compatible uveitic syndrome",
+          "details": [
+            "anterior uveitis with iris nodules",
+            "serpiginous-like tubercular choroiditis",
+            "choroidal nodule (i.e. tuberculoma)",
+            "in individuals with active systemic tuberculosis, multifocal choroiditis",
+            "occlusive retinal vasculitis"
+          ]
+        },
+        {
+          "type": "Evidence of infection with Mycobacterium tuberculosis",
+          "details": [
+            "histologically- or microbiologically-confirmed infection with M. tuberculosis OR",
+            "positive interferon-γ release assay (IGRA) OR",
+            "positive tuberculin skin test"
+          ]
+        }
+      ],
+      "exclusions": [
+        "Positive serology for syphilis using a treponemal test",
+        "Positive biopsy for sarcoidosis (and therefore an absence of histological or microbiologic confirmation of infection with M. tuberculosis)",
+        "Uveitic syndrome compatible with either sarcoidosis-associated uveitis or tubercular uveitis and bilateral hilar adenopathy on chest imaging without histological or microbiologic confirmation of the diagnosis of infection with M. tuberculosis"
+      ]
+    }
+  ]
+}
+

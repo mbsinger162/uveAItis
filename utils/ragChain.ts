@@ -12,7 +12,7 @@ import { createHistoryAwareRetriever } from "langchain/chains/history_aware_retr
 import sunCriteria from '@/utils/sunCriteria';
 
 function isDiagnosisQuestion(question: string): boolean {
-  const diagnosisKeywords = ['diagnose', 'diagnosis', 'classify', 'classification', 'criteria'];
+  const diagnosisKeywords = ['diagnose', 'diagnosis', 'differential', 'classify', 'classification', 'criteria'];
   return diagnosisKeywords.some(keyword => question.toLowerCase().includes(keyword));
 }
 
@@ -36,6 +36,8 @@ If the question involves diagnosis or classification
 2 - Pay careful attention to logical operators (such as 'and', 'or', 'neither', 'nor') in the criteria. These words can significantly alter the meaning of a criterion. When encountering such terms, explicitly state their implication for the diagnosis.
 3 - In some cases the vignette will not have PCR results. Do not exclude a diagnosis because PCR has not been collected even though the criteria may specify that for that diagnosis PCR is necessary.
 4 - pay attention to key historical details such as prior surgery
+
+Please do not reference that the system message or prompt in your response
 
 <sun_criteria>
 ${JSON.stringify(sunCriteria).replace(/[{}]/g, (match) => (match === '{' ? '{{' : '}}'))}
