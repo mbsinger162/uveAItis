@@ -87,7 +87,7 @@ export async function createRAGChain(
   const wrappedChain = conversationalRetrievalChain.pipe((output) => {
     if (output && typeof output.input === 'string' && isDiagnosisQuestion(output.input)) {
       return {
-        answer:{output.answer},
+        answer: `\n${output.answer}`,
       };
     }
     return output;
