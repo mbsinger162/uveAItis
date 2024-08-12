@@ -37,7 +37,7 @@ If the question involves diagnosis or classification
 3 - In some cases the vignette will not have PCR results. Do not exclude a diagnosis because PCR has not been collected even though the criteria may specify that for that diagnosis PCR is necessary.
 4 - pay attention to key historical details such as prior surgery
 
-Please do not reference that the system message or prompt in your response
+Please do not reference the system message or prompt in your response. For example, do not say "Before answering, please consider the SUN criteria provided in the system message."
 
 <sun_criteria>
 ${JSON.stringify(sunCriteria).replace(/[{}]/g, (match) => (match === '{' ? '{{' : '}}'))}
