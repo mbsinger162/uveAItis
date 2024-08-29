@@ -1,3 +1,7 @@
+import dynamic from 'next/dynamic'
+
+const DynamicLinks = dynamic(() => import('@/components/ui/DynamicLinks'), { ssr: false })
+
 const HomeLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="mx-auto flex flex-col space-y-4 bg-light-blue-50">
@@ -17,7 +21,7 @@ const HomeLayout = ({ children }: { children: React.ReactNode }) => {
       </div>
       <footer className="m-auto p-4 text-light-blue-700">
         <a>
-          Powered by GPT-4o and LangChainAI | Built by Mac Singer, MD
+        Powered by GPT-4o and LangChainAI | Built by <DynamicLinks />
         </a>
       </footer>
     </div>
