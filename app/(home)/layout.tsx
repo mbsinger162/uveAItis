@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import { Analytics } from "@vercel/analytics/react"
 
 const DynamicLinks = dynamic(() => import('@/components/ui/DynamicLinks'), { ssr: false })
 
@@ -17,6 +18,7 @@ const HomeLayout = ({ children }: { children: React.ReactNode }) => {
       <div>
         <main className="flex w-full flex-1 flex-col overflow-hidden">
           {children}
+          <Analytics />
         </main>
       </div>
       <footer className="m-auto p-4 text-light-blue-700">
