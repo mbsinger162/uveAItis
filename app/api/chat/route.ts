@@ -37,6 +37,8 @@ export async function POST(req: Request) {
 
     const currentMessage = messages[messages.length - 1].content;
 
+    console.log(`User Query: ${currentMessage}`);
+
     // const chatModel = new ChatAnthropic({
     //   apiKey: process.env.ANTHROPIC_API_KEY,
     //   modelName: "claude-3-5-sonnet-20240620",
